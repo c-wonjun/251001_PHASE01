@@ -10,6 +10,8 @@ const { SUPABASE_KEY: supabaseKey, SUPABASE_URL: supabaseUrl } = process.env;
 console.log("supabaseKey", supabaseKey);
 console.log("supabaseUrl", supabaseUrl);
 const supabase = createClient(supabaseUrl, supabaseKey);
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
 const app = express();
 const port = 3000;
